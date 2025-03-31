@@ -11,6 +11,10 @@ int main(){
     int id2, populacao2, N_ptosturismo2;
     float area2, pib2;
 
+    //DESAFIO NVL AVENTUREIRO
+    float densidade, pib_capita;
+    float densidade2, pib_capita2;
+
 //obtenção de dados da carta 1
 printf("Você está inserindo os dados da PRIMEIRA carta \n");
 printf("====================================================\n");
@@ -29,6 +33,10 @@ printf("Insira Número de Pontos turísticos \n");
 scanf("%d", &N_ptosturismo);
 printf("\n\tFim da primeira carta");
 
+//DESFIO NVL 2 - AVENTUREIRO
+densidade = (float)(populacao / area);
+pib_capita = (float)(pib *1000000000/ populacao);
+
 //obtenção de dados da carta 2
 printf("\n\nAgora os dados da SEGUNDA carta \n");
 printf("====================================================\n");
@@ -46,8 +54,12 @@ scanf(" %f",&pib2);
 printf("Insira Número de Pontos turísticos \n");
 scanf("%d", &N_ptosturismo2);
 
-system("clear");//limpar terminal do Windows
-system("cls"); //Limpar terminal no linux
+//DESFIO NVL 2 - AVENTUREIRO
+densidade2 = (float)(populacao2 / area2);
+pib_capita2 = (float)( pib2 *1000000000 / populacao2);
+
+
+//system("cls"); //Limpar terminal no linux
 
 //exibição de dados da carta 1
 printf("\n\n====================================================\n");
@@ -59,6 +71,9 @@ printf("\n População: %d",populacao);
 printf("\n Area: %.2f Km²",area);
 printf("\n PIB: %.2f bilhões de reais",pib);
 printf("\n Número de pontos turísticos: %d",N_ptosturismo);
+//DESAFIO NVL 2 - AVENTUREIRO
+printf("\n Densidade Populacional: %.2f hab/km²",densidade);
+printf("\n PIB per capita: R$ %.2f reais",pib_capita);
 printf("\n\n====================================================\n");
 
 
@@ -71,6 +86,9 @@ printf("\n População: %d",populacao2);
 printf("\n Area: %.2f Km²",area2);
 printf("\n PIB: %.2f bilhões de reais",pib2);
 printf("\n Número de pontos turísticos: %d",N_ptosturismo2);
+//DESAFIO NVL 2 - AVENTUREIRO
+printf("\n Densidade Populacional: %.2f hab/km²",densidade2);
+printf("\n PIB per capita: R$ %.2f reais",pib_capita2);
 printf("\n====================================================\n");
 
     return 0;
