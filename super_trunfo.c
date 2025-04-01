@@ -4,16 +4,21 @@ int main(){
 
     //vars da primeira carta
     char estado, cidade[50];
-    int id, populacao, N_ptosturismo;
+    int id, N_ptosturismo;
     float area, pib;
+    
     //vars da segunda carta
     char estado2, cidade2[50];
-    int id2, populacao2, N_ptosturismo2;
+    int id2, N_ptosturismo2;
     float area2, pib2;
 
-    //DESAFIO NVL AVENTUREIRO
+    //DESAFIO NVL 2 - AVENTUREIRO
     float densidade, pib_capita;
     float densidade2, pib_capita2;
+
+    //DESAFIO NVL 3 - MESTRE
+    unsigned int populacao;
+    unsigned int populacao2;
 
 //obtenção de dados da carta 1
 printf("Você está inserindo os dados da PRIMEIRA carta \n");
@@ -32,10 +37,14 @@ scanf("%f", &pib);
 printf("Insira Número de Pontos turísticos \n");
 scanf("%d", &N_ptosturismo);
 printf("\n\tFim da primeira carta");
-
 //DESFIO NVL 2 - AVENTUREIRO
 densidade = (float)(populacao / area);
 pib_capita = (float)(pib *1000000000/ populacao);
+
+//DESAFIO NVL 3 - MESTRE
+float superpoderA = populacao+area+(pib*1000000000)+N_ptosturismo+pib_capita+(-densidade);
+float superpoderB = populacao2+area2+(pib2*1000000000)+N_ptosturismo2+pib_capita2+(-densidade);
+
 
 //obtenção de dados da carta 2
 printf("\n\nAgora os dados da SEGUNDA carta \n");
@@ -53,13 +62,10 @@ printf("Insira o valor do PIB (em bilhões R$) \n");
 scanf(" %f",&pib2);
 printf("Insira Número de Pontos turísticos \n");
 scanf("%d", &N_ptosturismo2);
-
 //DESFIO NVL 2 - AVENTUREIRO
 densidade2 = (float)(populacao2 / area2);
 pib_capita2 = (float)( pib2 *1000000000 / populacao2);
 
-
-//system("cls"); //Limpar terminal no linux
 
 //exibição de dados da carta 1
 printf("\n\n====================================================\n");
@@ -91,5 +97,16 @@ printf("\n Densidade Populacional: %.2f hab/km²",densidade2);
 printf("\n PIB per capita: R$ %.2f reais",pib_capita2);
 printf("\n====================================================\n");
 
-    return 0;
+
+//DESAFIO NVL 3 - MESTRE
+printf("----- Comparação de Cartas: -----\n");
+printf("População: Carta 1 venceu? %d\n", populacao > populacao2);
+printf("Area: Carta 1 venceu? %d\n", area>area2);
+printf("PIB: Carta 1 venceu? %d\n", pib > pib2);
+printf("Pontos Turísticos: Carta 1 venceu? %d\n",N_ptosturismo>N_ptosturismo2);
+printf("Densidade Pooulacional: Carta 2 venceu? %d\n",densidade2>densidade);
+printf("PIB per capita: Carta 1 venceu? %d\n",pib>pib2);
+printf("Super Poder: Carta 1 venceu? %d\n\n",superpoderA>superpoderB);
+
+return 0;
 }
